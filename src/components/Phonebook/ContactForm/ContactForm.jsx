@@ -1,6 +1,7 @@
 import { nanoid } from 'nanoid';
+
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../../../redux/contacts/contacts-slice';
+import { addContact } from '../../../redux/contacts/contacts-operations';
 import { getFilteredContacts } from '../../../redux/selectors';
 
 import styles from './contact-form.module.css';
@@ -28,7 +29,7 @@ const ContactForm = () => {
         addContact({
           id: nanoid(),
           name: nameInput.value,
-          number: numberInput.value,
+          phone: numberInput.value,
         })
       );
       e.target.reset();
